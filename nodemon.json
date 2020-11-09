@@ -1,0 +1,7 @@
+{
+    "env": {
+        "PORT": "3000",
+        "CONFIG_FILE":"./config.json",
+	"NODE_ENV":"development"
+    }
+}

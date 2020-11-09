@@ -1,0 +1,39 @@
+{
+  "name": "simpro_backend_server",
+  "version": "0.0.1",
+  "description": "Template",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "start:prod": "node server.js",
+    "start:test": "node server.js"
+  },
+  "author": "sspitzenreiter@gitlab.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cluster": "^0.7.7",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "jsdom": "^16.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
+    "sequelize": "^6.3.5",
+    "sequelize-auto": "^0.5.4",
+    "sequelize-cli": "^6.2.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.1.3",
+    "mocha-junit-reporter": "^2.0.0",
+    "mochawesome": "^6.1.1",
+    "sequelize-auto-migration": "0.0.7",
+    "sequelize-auto-migrations": "^1.0.3",
+    "sinon": "^9.0.3",
+    "supertest": "^4.0.2",
+    "umzug": "^2.3.0"
+  }
+}
