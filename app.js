@@ -2,9 +2,6 @@
 const express = require('express');
 const logging = require('morgan');
 const fs = require('fs');
-const dotenv = require('dotenv');
-var SHA256 = require("crypto-js/sha256");
-dotenv.config();
 //Get config file. File location defined by variable or default name config.json
 const {Sequelize} = require('sequelize');
 const bodyParser = require('body-parser');

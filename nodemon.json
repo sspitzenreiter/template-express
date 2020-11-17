@@ -1,6 +1,6 @@
 {
     "env": {
-        "PORT": "3000",
+        "PORT": "3500",
         "CONFIG_FILE":"./config.json",
 	"NODE_ENV":"development"
     }

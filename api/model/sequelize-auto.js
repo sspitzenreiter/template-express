@@ -4,7 +4,7 @@ var config = {};
 target.map(x=>{
   config[x]=(typeof process.env[x]!=='undefined'?process.env[x]:null)
 });
-var auto = new SequelizeAuto(config.DATABASE || "simpro_user", config.USER || "simpro_user", config.PASS, {
+var auto = new SequelizeAuto(config.DATABASE || "simpro_kegiatan", config.USER || "root", config.PASS, {
     host: config.HOST || "localhost",
     dialect: config.DIALECT || "mysql",
     port: config.PORT || "3306",
