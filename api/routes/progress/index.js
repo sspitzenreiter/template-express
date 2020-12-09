@@ -1,7 +1,7 @@
 //Lib
 const express = require('express');
 const router = express.Router();
-const Model = require('./../model/kegiatanModel');
+const Model = require('./../../model/kegiatanProgressModel');
 const model = new Model();
 // const routerTest = require('./test/test');
 //Middlewares list
@@ -19,6 +19,7 @@ router.get('/', (req, res, next)=>{
     var filtered = filter_data(['id_kegiatan'], req.query)
     model.getAllData(filtered).then(x=>{
         if(x.length>0){
+            console.log(x);
             res.status(200).send({
                 data:x
             })
@@ -44,17 +45,12 @@ router.get('/', (req, res, next)=>{
     })
 });
 
-router.get('/koordinator/:id', (req, res, next)=>{
-    model.getData({id_koordinator:req.params.id, soft_delete:0}).then(x=>{
-        if(x!=null){
-            res.status(200).send({
-                data:x
-            })
-        }else{
-            res.status(204).send({
-                message:"Kosong"
-            })
-        }
+router.post('/', (req, res, next)=>{
+    var filtered = filter_data(['judul_progress','id_kegiatan','bobot'], req.body);
+    model.postData(filtered).then(x=>{
+        res.status(201).send({
+            message:"Sukses"
+        })
     }).catch(err=>{
         var details = {
             parent:err.parent,

@@ -10,7 +10,6 @@ exports.validate = (method) =>{
         case 'post':{
             return [
                 body('nama_kegiatan').exists().withMessage("Nama Kegiatan harus didefinisikan").notEmpty().withMessage("Nama kegiatan harus diisi").isString().withMessage("Nama kegiatan harus berformat teks"),
-                body('jenis_kegiatan').exists().withMessage("Jenis Kegiatan harus didefinisikan").notEmpty().withMessage("Nama kegiatan harus diisi").isNumeric().withMessage("Jenis kegiatan harus berformat numerik"),
                 body('id_koordinator').exists().withMessage("Koordinator harus langsung dipilih").notEmpty().withMessage("ID Koordinator harus diisi").isString().withMessage("ID Koordinator harus berformat teks"),
                 body('angkatan').exists().withMessage("Angkatan harus didefinisikan").notEmpty().withMessage("Angkatan harus diisi").isString().withMessage("Angkatan harus berformat teks"),
                 body('tgl_mulai').exists().withMessage("Tanggal Mulai harus didefinisikan").notEmpty().withMessage("Tanggal Mulai harus diisi").isDate().withMessage("Tanggal Mulai harus berformat tanggal"),
@@ -26,12 +25,12 @@ exports.validate = (method) =>{
                 body('persentase_bimbingan').optional().notEmpty().withMessage("harus diisi").isNumeric().withMessage("harus berformat angka"),
                 body('persentase_sidang_pembimbing').optional().notEmpty().withMessage("harus diisi").isNumeric().withMessage("harus berformat angka"),
                 body('persentase_sidang_penguji').optional().notEmpty().withMessage("harus diisi").isNumeric().withMessage("harus berformat angka"),
-                body('tgl_pengajuan_proposal_mulai').optional().notEmpty().withMessage("harus diisi").isDate().withMessage("harus berformat tanggal"),
-                body('tgl_pengajuan_proposal_selesai').optional().notEmpty().withMessage("harus diisi").isDate().withMessage("harus berformat tanggal"),
-                body('tgl_bimbingan_mulai').optional().notEmpty().withMessage("harus diisi").isDate().withMessage("harus berformat tanggal"),
-                body('tgl_bimbingan_selesai').optional().notEmpty().withMessage("harus diisi").isDate().withMessage("harus berformat tanggal"),
-                body('tgl_sidang_mulai').optional().notEmpty().withMessage("harus diisi").isDate().withMessage("harus berformat tanggal"),
-                body('tgl_sidang_selesai').optional().notEmpty().withMessage("harus diisi").isDate().withMessage("harus berformat tanggal"),
+                body('tgl_pengajuan_proposal_mulai').optional().notEmpty().withMessage("harus diisi"),
+                body('tgl_pengajuan_proposal_selesai').optional().notEmpty().withMessage("harus diisi"),
+                body('tgl_bimbingan_mulai').optional().notEmpty().withMessage("harus diisi"),
+                body('tgl_bimbingan_selesai').optional().notEmpty().withMessage("harus diisi"),
+                body('tgl_sidang_mulai').optional().notEmpty().withMessage("harus diisi"),
+                body('tgl_sidang_selesai').optional().notEmpty().withMessage("harus diisi"),
                 body('rule_filter_dosen').optional().notEmpty().withMessage("harus diisi").isNumeric().withMessage("harus berformat Angka"),
                 body('rule_activate_proposal').optional().notEmpty().withMessage("harus diisi").isNumeric().withMessage("harus berformat angka"),
             ]
